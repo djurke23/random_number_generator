@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        /* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    font-size: 36px;
+    color: #333;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Number Generator</h1>
+        <p>Generate a number between <span id="min-value">1</span> and <span id="max-value">100</span></p>
+        <input type="number" id="min" placeholder="Min value" value="1">
+        <input type="number" id="max" placeholder="Max value" value="100">
+        <button id="generate-btn">Generate</button>
+        <div id="result"></div>
+    </div>
+    <script>
+
+        // script.js
+document.getElementById('generate-btn').addEventListener('click', function() {
+    const min = parseInt(document.getElementById('min').value);
+    const max = parseInt(document.getElementById('max').value);
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    document.getElementById('result').innerText = randomNumber;
+});
+
+
+    </script>
+</body>
+</html>
